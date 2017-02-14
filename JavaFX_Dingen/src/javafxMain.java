@@ -29,6 +29,7 @@ public class javafxMain extends Application {
             }
         });
         pane.getChildren().add(knop);
+        //add a comment
 
         primaryStage.setScene(s);
         primaryStage.show();
