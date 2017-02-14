@@ -1,4 +1,6 @@
 import javafx.application.Application;
+import javafx.event.ActionEvent;
+import javafx.event.EventHandler;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.layout.VBox;
@@ -20,6 +22,12 @@ public class javafxMain extends Application {
         Scene s = new Scene(pane);
 
         Button knop = new Button("KLIK");
+        knop.setOnAction(new EventHandler<ActionEvent>() {
+            @Override
+            public void handle(ActionEvent event) {
+                System.out.println("hey");
+            }
+        });
         pane.getChildren().add(knop);
 
         primaryStage.setScene(s);
