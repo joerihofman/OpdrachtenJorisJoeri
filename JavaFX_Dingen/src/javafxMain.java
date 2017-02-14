@@ -1,9 +1,13 @@
 import javafx.application.Application;
-import javafx.event.ActionEvent;
-import javafx.event.EventHandler;
+import javafx.geometry.Insets;
+import javafx.geometry.Pos;
 import javafx.scene.Scene;
-import javafx.scene.control.Button;
-import javafx.scene.layout.VBox;
+import javafx.scene.control.Label;
+import javafx.scene.control.PasswordField;
+import javafx.scene.layout.GridPane;
+import javafx.scene.text.Font;
+import javafx.scene.text.FontWeight;
+import javafx.scene.text.Text;
 import javafx.stage.Stage;
 
 public class javafxMain extends Application {
@@ -16,21 +20,26 @@ public class javafxMain extends Application {
     @Override
     public void start(Stage primaryStage) throws Exception {
         primaryStage.setTitle("JAVAFX");
-        primaryStage.setHeight(500);
-        primaryStage.setWidth(300);
-        VBox pane = new VBox();
-        Scene s = new Scene(pane);
+        GridPane grid = new GridPane();
+        grid.setAlignment(Pos.CENTER);
+        grid.setVgap(10);
+        grid.setHgap(10);
+        grid.setPadding(new Insets(25,25,25,25));
 
-        Button knop = new Button("KLIK");
-        knop.setOnAction(new EventHandler<ActionEvent>() {
-            @Override
-            public void handle(ActionEvent event) {
-                System.out.println("hey");
-            }
-        });
-        pane.getChildren().add(knop);
-        //add a comment
+        Text text = new Text("Welkom~~~");
+        text.setFont(Font.font("Tahoma", FontWeight.NORMAL,20));
+        grid.add(text,0,0,2,1);
 
+        Label user = new Label("Username:");
+        grid.add(user,1,1);
+
+        Label pwd = new Label("Password:");
+        grid.add(pwd,0,2);
+
+        PasswordField pwdBox = new PasswordField();
+        grid.add(pwdBox,1,2);
+
+        Scene s = new Scene(grid,300,275);
         primaryStage.setScene(s);
         primaryStage.show();
     }
