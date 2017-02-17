@@ -26,8 +26,8 @@ public class javafxMain extends Application {
         grid.setHgap(10);
         grid.setPadding(new Insets(25,25,25,25));
 
-        Text text = new Text("Welkom~~~");
-        text.setFont(Font.font("Tahoma", FontWeight.NORMAL,20));
+        Text text = new Text("Welkom");
+        text.setFont(Font.font("Comic Sans", FontWeight.NORMAL,20));
         grid.add(text,0,0,2,1);
 
         Label user = new Label("Username:");
