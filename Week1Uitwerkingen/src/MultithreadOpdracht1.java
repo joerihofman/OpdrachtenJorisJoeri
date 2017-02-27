@@ -1,3 +1,11 @@
+import javafx.application.Application;
+import javafx.scene.Scene;
+import javafx.scene.control.TextArea;
+import javafx.scene.layout.VBox;
+import javafx.stage.Stage;
+
+import javax.swing.*;
+
 public class MultithreadOpdracht1 {
     public static void main(String[] args) {
         // Create tasks
@@ -14,6 +22,8 @@ public class MultithreadOpdracht1 {
         thread1.start();
         thread2.start();
         thread3.start();
+
+        Application.launch(args);
     }
 }
 
@@ -37,6 +47,7 @@ class PrintChar implements Runnable {
         for (int i = 0; i < times; i++) {
             System.out.print(charToPrint);
         }
+        new TextArea();
     }
 }
 
@@ -44,15 +55,23 @@ class PrintChar implements Runnable {
 class PrintNum implements Runnable {
     private int lastNum;
 
-    /** Construct a task for printing 1, 2, ... i */
+    /**
+     * Construct a task for printing 1, 2, ... i
+     */
     public PrintNum(int n) {
         lastNum = n;
     }
 
-    @Override /** Tell the thread how to run */
+    @Override
+    /** Tell the thread how to run */
     public void run() {
         for (int i = 1; i <= lastNum; i++) {
+//            JTextArea textArea = new JTextArea(5, 20);
+//            JScrollPane scrollPane = new JScrollPane(textArea);
+//            //textArea.setEditable(false);
+//
             System.out.print(" " + i);
+//            textArea.append(Integer.toString(i));
         }
     }
 }
