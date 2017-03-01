@@ -1,6 +1,9 @@
 import javafx.animation.KeyFrame;
 import javafx.animation.Timeline;
+import javafx.application.Platform;
 import javafx.beans.property.DoubleProperty;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.layout.Pane;
 import javafx.scene.paint.Color;
 import javafx.scene.shape.Circle;
@@ -12,6 +15,18 @@ public class BallPane extends Pane {
   private double dx = 1, dy = 1;
   private Circle circle = new Circle(x, y, radius);
   private Timeline animation;
+
+  public static void main(String args[]){
+      UseThread thread = null;
+      try{
+          thread = new UseThread();
+      } catch (Exception e){
+          e.printStackTrace();
+      }
+      while (true){
+          thread.run();
+      }
+  }
 
   public BallPane() {
     circle.setFill(Color.GREEN); // Set ball color
@@ -59,5 +74,19 @@ public class BallPane extends Pane {
     y += dy;
     circle.setCenterX(x);
     circle.setCenterY(y);
+  }
+}
+
+class UseThread implements Runnable{
+  @Override
+  public void run(){
+    Platform.runLater(() -> {
+        try{
+            Scene s = new Scene(new BallPane(),300,300);
+//            primaryStage
+        } catch (Exception e){
+            e.printStackTrace();
+        }
+    });
   }
 }
