@@ -1,18 +1,28 @@
+import java.util.concurrent.ExecutorService;
+import java.util.concurrent.Executors;
+import java.util.concurrent.ThreadPoolExecutor;
+
 public class opdracht30_4 {
 
     public static void main(String args[]) {
+        ExecutorService executorService = Executors.newFixedThreadPool(1000);
+        Threads t = new Threads();
         for (int i = 0; i < 1000; i++) {
-            Threads t = new Threads();
-            (new Thread(t)).start();
+            executorService.execute(new Thread(t));
         }
-
+    executorService.shutdown();
+        while (!executorService.isTerminated()){
+        }
+        System.out.println("finished all");
     }
 }
 
 class Threads implements Runnable {
-    int a = 0;
+    private int a = 0;
+    @Override
     public synchronized void run() {
-        System.out.println(a);
+        System.out.println("Thread created");
         a++;
+        System.out.println(a);
     }
 }
