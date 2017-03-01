@@ -1,11 +1,17 @@
 import javafx.animation.KeyFrame;
 import javafx.animation.Timeline;
+import javafx.application.Application;
+import javafx.application.Platform;
 import javafx.beans.property.DoubleProperty;
+import javafx.embed.swing.JFXPanel;
 import javafx.scene.layout.Pane;
 import javafx.scene.paint.Color;
 import javafx.scene.shape.Circle;
+import javafx.stage.Stage;
+import javafx.stage.StageBuilder;
 import javafx.util.Duration;
 
+import javax.swing.*;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 
@@ -65,28 +71,47 @@ public class BallPane extends Pane {
   }
 }
 
-class StartHere {
-  public static void main(String args[]){
-      ExecutorService executorService = Executors.newFixedThreadPool(1);
-      MoveBall moveBall = new MoveBall();
-//      moveBall.startSpel();
-      while (true){
-          executorService.execute(new Thread(moveBall));
-      }
-      //thread aanmaken
-  }
 
-}
-class MoveBall implements Runnable {
-    BallPane ballPane = new BallPane();
 
-//    public void startSpel(){
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+//        new Thread(new Runnable() {
+//            @Override
+//            public void run() {
+//                BallPane ballPane = new BallPane();
+//                Platform.runLater(new Runnable() {
+//                    @Override
+//                    public void run() {
+//                        ballPane.moveBall();
+//                    }
+//                });
+//            }
+//        }).start();
+//        ExecutorService executorService = Executors.newFixedThreadPool(1);
+//      while (true){
+//          executorService.execute(new Thread(moveBall));
+//      }
+//        thread aanmaken
 //    }
+//}
 
-    @Override
-    public void run() {
-        ballPane.moveBall();
-
-        //ball bewegen
-    }
-}
+//class MoveBall implements Runnable {
+//
+//    @Override
+//    public void run() {
+//        ballPane.();
+//        ball bewegen
+//    }
+//}
