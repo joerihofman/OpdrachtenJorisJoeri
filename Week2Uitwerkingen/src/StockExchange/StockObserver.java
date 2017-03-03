@@ -13,9 +13,9 @@ public class StockObserver implements Observer {
     private int observerID;
     
     // a reference to concrete subject
-    private Subject stockGrabber;
+    private Observable stockGrabber;
     
-    public StockObserver(Subject stockGrabber){
+    public StockObserver(Observable stockGrabber){
      
         this.stockGrabber = stockGrabber;
         this.observerID = ++observerIDTracker;

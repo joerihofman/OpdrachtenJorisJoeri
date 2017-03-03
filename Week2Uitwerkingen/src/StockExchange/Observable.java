@@ -1,6 +1,6 @@
 package StockExchange;
 
-public interface Subject {
+public interface Observable {
     
     public void register(Observer o);
     public void unregister(Observer o);
