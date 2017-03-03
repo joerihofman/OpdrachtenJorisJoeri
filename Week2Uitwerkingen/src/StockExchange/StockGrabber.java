@@ -1,3 +1,5 @@
+package StockExchange;
+
 import java.util.ArrayList;
 
 public class StockGrabber implements Subject{
