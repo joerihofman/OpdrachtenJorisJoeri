@@ -1,5 +1,6 @@
 package ADS;
 
+import java.io.IOException;
 import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.util.ArrayList;
@@ -7,16 +8,16 @@ import java.util.List;
 import java.util.Scanner;
 
 public class Opdracht20_1{
-    public static void main(String[] args){
+    public static void main(String[] args) throws IOException {
         List<String> originalList = textToList("textfile.txt");
         List<String> sortedList = new ArrayList<>();
 
         for(int item=0; item < sortedList.size(); item++){
-            System.out.println(item)
+            System.out.println(item);
         }
     }
 
-    public ArrayList textToList(pathToFile){
+    public static List textToList(String pathToFile) throws IOException {
         Path filePath = Paths.get(pathToFile);
         Scanner scanner = new Scanner(filePath);
         List<String> words = new ArrayList<>();
