@@ -49,21 +49,21 @@ public class Opdracht20_2 extends Application{
         button_sort.setOnAction(new EventHandler<ActionEvent>() {
             @Override
             public void handle(ActionEvent event) {
-                ;
+                System.out.println(textField.getText());
             }
         });
 
         button_shuffle.setOnAction(new EventHandler<ActionEvent>() {
             @Override
             public void handle(ActionEvent event) {
-                ;
+                System.out.println(textField.getText());
             }
         });
 
         button_reverse.setOnAction(new EventHandler<ActionEvent>() {
             @Override
             public void handle(ActionEvent event) {
-                ;
+                System.out.println(textField.getText());
             }
         });
 
