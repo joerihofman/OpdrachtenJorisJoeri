@@ -2,17 +2,17 @@ import java.io.IOException;
 import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 import java.util.Scanner;
 
 public class Opdracht20_1{
     public static void main(String[] args) throws IOException {
         List<String> originalList = textToList("Week2Uitwerkingen/ADS/textfile.txt");
-        System.out.println(originalList);
-        List<String> sortedList = new ArrayList<>();
+        Collections.sort(originalList);
 
-        for(int item=0; item < sortedList.size(); item++){
-            System.out.println(item);
+        for(int i=0; i< originalList.size(); i++){
+            System.out.println(originalList.get(i));
         }
     }
 
