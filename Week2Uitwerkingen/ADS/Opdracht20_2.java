@@ -49,7 +49,8 @@ public class Opdracht20_2 extends Application{
         button_sort.setOnAction(new EventHandler<ActionEvent>() {
             @Override
             public void handle(ActionEvent event) {
-                System.out.println(textField.getText());
+                String[] input = textField.getText().split(" ");
+                System.out.println(input);
             }
         });
 
