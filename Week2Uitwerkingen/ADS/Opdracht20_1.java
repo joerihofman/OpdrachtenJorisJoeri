@@ -9,7 +9,7 @@ import java.util.Scanner;
 public class Opdracht20_1{
     public static void main(String[] args) throws IOException {
         List<String> originalList = textToList("Week2Uitwerkingen/ADS/textfile.txt");
-        Collections.sort(originalList);
+        Collections.reverse(originalList);
 
         for(int i=0; i< originalList.size(); i++){
             System.out.println(originalList.get(i));
