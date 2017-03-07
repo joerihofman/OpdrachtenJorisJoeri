@@ -5,7 +5,7 @@ import java.util.ArrayList;
 public class StockGrabber implements Observable {
     private ArrayList<Observer> observers;
     private double ibmPrice;
-    private double aaplPrice;
+    private double applPrice;
     private double googPrice;
 
     public StockGrabber(){
@@ -24,7 +24,7 @@ public class StockGrabber implements Observable {
     public void notifyObserver() {
 
         for(Observer observer : observers){
-            observer.update(ibmPrice, aaplPrice, googPrice);
+            observer.update(ibmPrice, applPrice, googPrice);
         }
     }
 
@@ -37,7 +37,7 @@ public class StockGrabber implements Observable {
 
     public void setAAPLPrice(double newAAPLPrice){
 
-        this.aaplPrice = newAAPLPrice;
+        this.applPrice = newAAPLPrice;
         notifyObserver();
     }
 
