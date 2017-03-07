@@ -12,6 +12,9 @@ import javafx.scene.layout.HBox;
 import javafx.scene.text.Text;
 import javafx.stage.Stage;
 
+import java.lang.reflect.Array;
+import java.util.Arrays;
+
 /**
  * Created by MSI on 7-3-2017.
  */
@@ -50,7 +53,7 @@ public class Opdracht20_2 extends Application{
             @Override
             public void handle(ActionEvent event) {
                 String[] input = textField.getText().split(" ");
-                System.out.println(input);
+                System.out.println(Arrays.toString(input));
             }
         });
 
