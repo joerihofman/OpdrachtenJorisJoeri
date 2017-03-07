@@ -1,5 +1,3 @@
-package ADS;
-
 import java.io.IOException;
 import java.nio.file.Path;
 import java.nio.file.Paths;
@@ -9,7 +7,7 @@ import java.util.Scanner;
 
 public class Opdracht20_1{
     public static void main(String[] args) throws IOException {
-        List<String> originalList = textToList("textfile.txt");
+        List<String> originalList = textToList("Week2Uitwerkingen/ADS/textfile.txt");
         List<String> sortedList = new ArrayList<>();
 
         for(int item=0; item < sortedList.size(); item++){

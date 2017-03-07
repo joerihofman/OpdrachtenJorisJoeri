@@ -1,5 +1,4 @@
 // the Client
-package StockExchange;
 
 public class StockApp{
     public static void main(String[] args){

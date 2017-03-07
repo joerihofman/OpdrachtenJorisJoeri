@@ -1,5 +1,3 @@
-package StockExchange;
-
 public interface Observable {
     
     public void register(Observer o);

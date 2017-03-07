@@ -1,5 +1,3 @@
-package StockExchange;
-
 public class StockObserver implements Observer {
     
     private double ibmPrice;
