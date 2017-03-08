@@ -24,6 +24,13 @@ public class Opdracht20_2Mathmatics {
     }
 
     public static String shuffle(LinkedList<Integer> linked){
+        for (int i = 0; i < linked.size(); i++) {
+            int random = (int) (Math.random() * linked.size()); //random geeft double tussen 0 en 1. Uiteindelijk dus een index.
+            Integer temporary = linked.get(random);       //de variable tmp is de waarde van de random index.
+            linked.set(random, linked.get(i));  //De waarden van index random en index i worden op deze twee regels verwisseld.
+            linked.set(i, temporary);
+        }
+
         String test = linked.toString();
         return test;
     }

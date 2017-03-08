@@ -83,6 +83,8 @@ public class Opdracht20_2 extends Application{
 
     public void buttonShuffle(String input){
         LinkedList<Integer> list = stringToLinked(input);
+        String shuffledListString = Opdracht20_2Mathmatics.shuffle(list);
+        System.out.println(shuffledListString);
     }
 
     public void buttonReverse(String input){
