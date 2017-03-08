@@ -17,20 +17,33 @@ import java.lang.reflect.Array;
 import java.util.Arrays;
 import java.util.LinkedList;
 
-/**
- * Created by MSI on 7-3-2017.
- */
 public class Opdracht20_2 extends Application{
     public static void main(String[] args) {launch(args);}
 
-    @Override
-    public void start(Stage primaryStage) throws Exception{
-        primaryStage.setTitle("GEEF ANTWOORD~~~!");
+    private GridPane setPanes() throws Exception{
         GridPane gridPane = new GridPane();
         gridPane.setAlignment(Pos.CENTER);
         gridPane.setVgap(10);
         gridPane.setHgap(10);
         gridPane.setPadding(new Insets(25,25,25,25));
+
+        return gridPane;
+    }
+
+    private HBox setHBox() throws Exception{
+        HBox hBox = new HBox(10);
+        hBox.setAlignment(Pos.BOTTOM_RIGHT);
+
+        return hBox;
+    }
+
+    @Override
+    public void start(Stage primaryStage) throws Exception{
+        primaryStage.setTitle("GEEF ANTWOORD~~~!");
+
+        GridPane gridPane = new Opdracht20_2().setPanes();
+
+        HBox hBox = new Opdracht20_2().setHBox();
 
         Text text = new Text("Wat een mooi programma");
         gridPane.add(text,0,0);
@@ -44,40 +57,42 @@ public class Opdracht20_2 extends Application{
         Button button_sort = new Button("SORT");
         Button button_shuffle = new Button("SHUFFLE");
         Button button_reverse = new Button("REVERSE");
-        HBox hBox = new HBox(10);
-        hBox.setAlignment(Pos.BOTTOM_RIGHT);
+
         hBox.getChildren().add(button_sort);
         hBox.getChildren().add(button_shuffle);
         hBox.getChildren().add(button_reverse);
+
         gridPane.add(hBox,1,3);
 
-        button_sort.setOnAction(new EventHandler<ActionEvent>() {
-            @Override
-            public void handle(ActionEvent event) {
-                String[] array = textField.getText().split(" ");
-                LinkedList<Integer>  linked = arrayToLinked(array);
-                System.out.println("test" + linked);
-            }
-        });
-        TextArea textArea = new TextArea();
+        final TextArea textArea = new TextArea();
         gridPane.add(textArea,1,4);
 
-        button_sort.setOnAction(event -> {
-            Opdracht20_2Mathmatics.sort(textField.getText());
-//            String[] input = textField.getText().split(" ");
-        });
-        button_shuffle.setOnAction(event -> System.out.println(textField.getText()));
+        button_sort.setOnAction(event -> buttonSort(textField.getText()));
+        button_shuffle.setOnAction(event -> buttonShuffle(textField.getText()));
 
-        button_shuffle.setOnAction(event -> System.out.println(textField.getText()));
-
-        button_reverse.setOnAction(event -> System.out.println(textField.getText()));
+        button_reverse.setOnAction(event -> buttonReverse(textField.getText()));
 
         Scene scene = new Scene(gridPane,550,300);
         primaryStage.setScene(scene);
         primaryStage.show();
     }
 
-    public LinkedList<Integer> arrayToLinked(String[] array) {
+    public void buttonSort(String input){
+        LinkedList<Integer> list = stringToLinked(input);
+        //Opdracht20_2mathmatics; zet list in goede volgorde
+        //textField.setText(uitkomst opdracht20_2mathmatics)
+    }
+
+    public void buttonShuffle(String input){
+        LinkedList<Integer> list = stringToLinked(input);
+    }
+
+    public void buttonReverse(String input){
+        LinkedList<Integer> list = stringToLinked(input);
+    }
+
+    public LinkedList<Integer> stringToLinked(String string) {
+        String[] array = string.split(" ");
         LinkedList<Integer> linkedList = new LinkedList<Integer>();
         for (int i = 0; i < array.length; i++) {
             linkedList.add(Integer.parseInt(array[i]));
@@ -85,3 +100,5 @@ public class Opdracht20_2 extends Application{
         return linkedList;
     }
 }
+
+

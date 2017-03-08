@@ -1,12 +1,14 @@
-/**
- * Created by MSI on 8-3-2017.
- */
 public class Opdracht20_2Mathmatics {
-    public void setText(){
-        ;
-    }
 
     public static void sort(String input){
+
+    }
+
+    public static void shuffle(String input){
+
+    }
+
+    public static void reverse(String input){
 
     }
 }
