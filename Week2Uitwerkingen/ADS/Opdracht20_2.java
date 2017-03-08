@@ -79,6 +79,8 @@ public class Opdracht20_2 extends Application{
 
     public void buttonSort(String input){
         LinkedList<Integer> list = stringToLinked(input);
+        String stringetje = Opdracht20_2Mathmatics.sort(list);
+        System.out.println(stringetje);
         //Opdracht20_2mathmatics; zet list in goede volgorde
         //textField.setText(uitkomst opdracht20_2mathmatics)
     }

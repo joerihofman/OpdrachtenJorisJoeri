@@ -1,14 +1,19 @@
+import java.util.LinkedList;
+
 public class Opdracht20_2Mathmatics {
 
-    public static void sort(String input){
-
+    public static String sort(LinkedList<Integer> linked){
+        String test = linked.toString();
+        return test;
     }
 
-    public static void shuffle(String input){
-
+    public static String shuffle(LinkedList<Integer> linked){
+        String test = linked.toString();
+        return test;
     }
 
-    public static void reverse(String input){
-
+    public static String reverse(LinkedList<Integer> linked){
+        String test = linked.toString();
+        return test;
     }
 }
