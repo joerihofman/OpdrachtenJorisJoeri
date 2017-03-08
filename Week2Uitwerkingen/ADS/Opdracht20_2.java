@@ -13,8 +13,13 @@ import javafx.scene.layout.HBox;
 import javafx.scene.text.Text;
 import javafx.stage.Stage;
 
+import java.lang.reflect.Array;
 import java.util.Arrays;
+import java.util.LinkedList;
 
+/**
+ * Created by MSI on 7-3-2017.
+ */
 public class Opdracht20_2 extends Application{
     public static void main(String[] args) {launch(args);}
 
@@ -46,6 +51,16 @@ public class Opdracht20_2 extends Application{
         hBox.getChildren().add(button_reverse);
         gridPane.add(hBox,1,3);
 
+        final LinkedList<Integer> linkedList = new LinkedList<Integer>();
+
+        button_sort.setOnAction(new EventHandler<ActionEvent>() {
+            @Override
+            public void handle(ActionEvent event) {
+                String[] array = textField.getText().split(" ");
+                LinkedList<Integer>  linked = arrayToLinked(array);
+                System.out.println(Arrays.toString(array));
+            }
+        });
         TextArea textArea = new TextArea();
         gridPane.add(textArea,1,4);
 
@@ -53,6 +68,7 @@ public class Opdracht20_2 extends Application{
             Opdracht20_2Mathmatics.sort(textField.getText());
 //            String[] input = textField.getText().split(" ");
         });
+        button_shuffle.setOnAction(event -> System.out.println(textField.getText()));
 
         button_shuffle.setOnAction(event -> System.out.println(textField.getText()));
 
@@ -62,7 +78,4 @@ public class Opdracht20_2 extends Application{
         primaryStage.setScene(scene);
         primaryStage.show();
     }
-
 }
-
-
