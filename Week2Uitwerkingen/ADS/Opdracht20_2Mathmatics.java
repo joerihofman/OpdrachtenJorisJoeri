@@ -12,8 +12,13 @@ public class Opdracht20_2Mathmatics {
         return test;
     }
 
-    public static String reverse(LinkedList<Integer> linked){
+    public static String reverse(LinkedList<Integer> linked) {
         String test = linked.toString();
         return test;
+    }
+
+    public static String listToString(LinkedList<Integer> linkedList){
+        String delijst=null;
+        return delijst;
     }
 }

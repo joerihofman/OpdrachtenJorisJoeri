@@ -1,6 +1,4 @@
 import javafx.application.Application;
-import javafx.event.ActionEvent;
-import javafx.event.EventHandler;
 import javafx.geometry.Insets;
 import javafx.geometry.Pos;
 import javafx.scene.Scene;
@@ -13,8 +11,6 @@ import javafx.scene.layout.HBox;
 import javafx.scene.text.Text;
 import javafx.stage.Stage;
 
-import java.lang.reflect.Array;
-import java.util.Arrays;
 import java.util.LinkedList;
 
 public class Opdracht20_2 extends Application{
@@ -79,8 +75,8 @@ public class Opdracht20_2 extends Application{
 
     public void buttonSort(String input){
         LinkedList<Integer> list = stringToLinked(input);
-        String stringetje = Opdracht20_2Mathmatics.sort(list);
-        System.out.println(stringetje);
+        String sortedListString = Opdracht20_2Mathmatics.sort(list);
+        System.out.println(sortedListString);
         //Opdracht20_2mathmatics; zet list in goede volgorde
         //textField.setText(uitkomst opdracht20_2mathmatics)
     }
