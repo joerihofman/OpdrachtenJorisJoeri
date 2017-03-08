@@ -63,8 +63,8 @@ public class Opdracht20_2 extends Application{
         final TextArea textArea = new TextArea();
         gridPane.add(textArea,1,4);
 
-        button_sort.setOnAction(event -> buttonSort(textField.getText()));
-        button_shuffle.setOnAction(event -> buttonShuffle(textField.getText()));
+        button_sort.setOnAction(event -> textArea.setText(buttonSort(textField.getText())));
+        button_shuffle.setOnAction(event -> textArea.setText(buttonShuffle(textField.getText())));
 
         button_reverse.setOnAction(event -> buttonReverse(textField.getText()));
 
@@ -73,18 +73,18 @@ public class Opdracht20_2 extends Application{
         primaryStage.show();
     }
 
-    public void buttonSort(String input){
+    public String buttonSort(String input){
         LinkedList<Integer> list = stringToLinked(input);
         String sortedListString = Opdracht20_2Mathmatics.sort(list);
-        System.out.println(sortedListString);
+        return sortedListString;
         //Opdracht20_2mathmatics; zet list in goede volgorde
         //textField.setText(uitkomst opdracht20_2mathmatics)
     }
 
-    public void buttonShuffle(String input){
+    public String buttonShuffle(String input){
         LinkedList<Integer> list = stringToLinked(input);
         String shuffledListString = Opdracht20_2Mathmatics.shuffle(list);
-        System.out.println(shuffledListString);
+        return shuffledListString;
     }
 
     public void buttonReverse(String input){
