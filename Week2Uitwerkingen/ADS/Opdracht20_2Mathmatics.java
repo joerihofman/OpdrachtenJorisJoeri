@@ -3,6 +3,22 @@ import java.util.LinkedList;
 public class Opdracht20_2Mathmatics {
 
     public static String sort(LinkedList<Integer> linked){
+        Boolean sorted = false;
+        while (sorted){
+            sorted = false;
+
+            for (int i = 0; i < linked.size() - 1; i++){
+                if (linked.get(i) < linked.get(i + 1)){
+                    //swap
+                    Integer temporaryI = linked.get(i);
+                    linked.set(i, linked.get(i+1));
+                    linked.set(i+1, temporaryI);
+
+                    sorted = true;
+                }
+            }
+        }
+
         String test = linked.toString();
         return test;
     }
