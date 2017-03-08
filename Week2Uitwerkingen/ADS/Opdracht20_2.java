@@ -6,18 +6,15 @@ import javafx.geometry.Pos;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
+import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
 import javafx.scene.layout.GridPane;
 import javafx.scene.layout.HBox;
 import javafx.scene.text.Text;
 import javafx.stage.Stage;
 
-import java.lang.reflect.Array;
 import java.util.Arrays;
 
-/**
- * Created by MSI on 7-3-2017.
- */
 public class Opdracht20_2 extends Application{
     public static void main(String[] args) {launch(args);}
 
@@ -49,30 +46,23 @@ public class Opdracht20_2 extends Application{
         hBox.getChildren().add(button_reverse);
         gridPane.add(hBox,1,3);
 
-        button_sort.setOnAction(new EventHandler<ActionEvent>() {
-            @Override
-            public void handle(ActionEvent event) {
-                String[] input = textField.getText().split(" ");
-                System.out.println(Arrays.toString(input));
-            }
+        TextArea textArea = new TextArea();
+        gridPane.add(textArea,1,4);
+
+        button_sort.setOnAction(event -> {
+            Opdracht20_2Mathmatics.sort(textField.getText());
+//            String[] input = textField.getText().split(" ");
         });
 
-        button_shuffle.setOnAction(new EventHandler<ActionEvent>() {
-            @Override
-            public void handle(ActionEvent event) {
-                System.out.println(textField.getText());
-            }
-        });
+        button_shuffle.setOnAction(event -> System.out.println(textField.getText()));
 
-        button_reverse.setOnAction(new EventHandler<ActionEvent>() {
-            @Override
-            public void handle(ActionEvent event) {
-                System.out.println(textField.getText());
-            }
-        });
+        button_reverse.setOnAction(event -> System.out.println(textField.getText()));
 
         Scene scene = new Scene(gridPane,550,300);
         primaryStage.setScene(scene);
         primaryStage.show();
     }
+
 }
+
+
