@@ -49,16 +49,18 @@ public class Opdracht20_2Mathmatics {
             rev.set(tmp);
         }
 
-        String test = linked.toString();
-        return test;
+        String resultString = listToString(linked);
+        return resultString;
     }
 
     //vrij naar http://stackoverflow.com/questions/19283083/printing-out-a-linked-list-using-tostring
     public static String listToString(LinkedList<Integer> linkedList){
         StringBuilder result = new StringBuilder();
         for(Object item:linkedList) {
-            result.append(item.toString());
-            result.append(" ");
+            if(!result.toString().contains(item.toString())) {
+                result.append(item.toString());
+                result.append(" ");
+            }
         }
         return result.toString();
     }

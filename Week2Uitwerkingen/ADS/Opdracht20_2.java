@@ -66,7 +66,7 @@ public class Opdracht20_2 extends Application{
         button_sort.setOnAction(event -> textArea.setText(buttonSort(textField.getText())));
         button_shuffle.setOnAction(event -> textArea.setText(buttonShuffle(textField.getText())));
 
-        button_reverse.setOnAction(event -> buttonReverse(textField.getText()));
+        button_reverse.setOnAction(event -> textArea.setText(buttonReverse(textField.getText())));
 
         Scene scene = new Scene(gridPane,550,300);
         primaryStage.setScene(scene);
@@ -87,10 +87,10 @@ public class Opdracht20_2 extends Application{
         return shuffledListString;
     }
 
-    public void buttonReverse(String input){
+    public String buttonReverse(String input){
         LinkedList<Integer> list = stringToLinked(input);
         String reversedListString = Opdracht20_2Mathmatics.reverse(list);
-        System.out.println(reversedListString);
+        return reversedListString;
     }
 
     public LinkedList<Integer> stringToLinked(String string) {
