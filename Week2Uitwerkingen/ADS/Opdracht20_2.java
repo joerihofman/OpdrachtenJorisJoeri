@@ -89,6 +89,8 @@ public class Opdracht20_2 extends Application{
 
     public void buttonReverse(String input){
         LinkedList<Integer> list = stringToLinked(input);
+        String reversedListString = Opdracht20_2Mathmatics.reverse(list);
+        System.out.println(reversedListString);
     }
 
     public LinkedList<Integer> stringToLinked(String string) {

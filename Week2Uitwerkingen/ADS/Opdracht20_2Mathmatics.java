@@ -1,4 +1,8 @@
 import java.util.LinkedList;
+import java.util.ListIterator;
+import java.util.RandomAccess;
+
+import static java.util.Collections.swap;
 
 public class Opdracht20_2Mathmatics {
 
@@ -33,6 +37,18 @@ public class Opdracht20_2Mathmatics {
     }
 
     public static String reverse(LinkedList<Integer> linked) {
+        //Inspiratie: http://www.java67.com/2015/01/how-to-reverse-arraylist-in-java-with.html
+
+        int size = linked.size();
+
+        ListIterator fwd = linked.listIterator();
+        ListIterator rev = linked.listIterator(size);
+        for (int i=0, mid=linked.size()>>1; i<mid; i++) {
+            Object tmp = fwd.next();
+            fwd.set(rev .previous());
+            rev.set(tmp);
+        }
+
         String test = linked.toString();
         return test;
     }
