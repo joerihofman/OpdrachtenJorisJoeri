@@ -51,14 +51,12 @@ public class Opdracht20_2 extends Application{
         hBox.getChildren().add(button_reverse);
         gridPane.add(hBox,1,3);
 
-        final LinkedList<Integer> linkedList = new LinkedList<Integer>();
-
         button_sort.setOnAction(new EventHandler<ActionEvent>() {
             @Override
             public void handle(ActionEvent event) {
                 String[] array = textField.getText().split(" ");
                 LinkedList<Integer>  linked = arrayToLinked(array);
-                System.out.println(Arrays.toString(array));
+                System.out.println("test" + linked);
             }
         });
         TextArea textArea = new TextArea();
@@ -77,5 +75,13 @@ public class Opdracht20_2 extends Application{
         Scene scene = new Scene(gridPane,550,300);
         primaryStage.setScene(scene);
         primaryStage.show();
+    }
+
+    public LinkedList<Integer> arrayToLinked(String[] array) {
+        LinkedList<Integer> linkedList = new LinkedList<Integer>();
+        for (int i = 0; i < array.length; i++) {
+            linkedList.add(Integer.parseInt(array[i]));
+        }
+        return linkedList;
     }
 }
